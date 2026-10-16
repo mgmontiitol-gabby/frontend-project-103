@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander'; 
+import parse from './src/parser.js';
 
 program
   .argument('<filepath1>')
@@ -9,4 +10,10 @@ program
   .version('1.0.0')
   .helpOption('-h, --help', 'output usage information')
   .option('-f, --format <type>', 'output format')
+  .action((filepath1, filepath2) => {
+    const path1 = parse(filepath1);
+    const path2 = parse(filepath2);
+    console.log(path1);
+    console.log(path2);
+  })
   .parse(process.argv);
