@@ -2,6 +2,7 @@
 
 import { program } from 'commander'; 
 import parse from './src/parser.js';
+import path from 'path';
 
 program
   .argument('<filepath1>')
@@ -11,8 +12,10 @@ program
   .helpOption('-h, --help', 'output usage information')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
-    const path1 = parse(filepath1);
-    const path2 = parse(filepath2);
+    const absolutePath1 = path.resolve(process.cwd(), filepath1);
+    const absolutePath2 = path.resolve(process.cwd(), filepath2);
+    const path1 = parse(absolutePath1);
+    const path2 = parse(absolutePath2);
     console.log(path1);
     console.log(path2);
   })
