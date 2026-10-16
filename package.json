@@ -1,0 +1,15 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![hexlet-check](https://github.com/mgmontiitol-gabby/frontend-project-103/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mgmontiitol-gabby/frontend-project-103/actions)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^15.0.0"
+  }
+}
