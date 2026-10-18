@@ -24,6 +24,7 @@ cd frontend-project-103
 
 <!-- Agregue ejemplos de ejecución y una grabación de asciinema: esto es lo que miran los empleadores -->
 
+[![asciicast](https://asciinema.org/a/7Z6yLbMDCSh7itQr.svg)](https://asciinema.org/a/7Z6yLbMDCSh7itQr)
 ---
 
 <details>
