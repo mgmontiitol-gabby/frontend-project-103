@@ -2,6 +2,9 @@
 
 [![hexlet-check](https://github.com/mgmontiitol-gabby/frontend-project-103/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mgmontiitol-gabby/frontend-project-103/actions)
 
+<!-- Prueba automátizada y CI (paso 6) -->
+[![CI](https://github.com/mgmontiitol-gabby/frontend-project-103/actions/workflows/ci.yml/badge.svg)](https://github.com/mgmontiitol-gabby/frontend-project-103/actions/workflows/ci.yml)
+
 Aprenderás a crear aplicaciones de línea de comandos (CLI), analizar y formatear datos en JSON y YAML. Además, explorarás el diseño de la arquitectura de aplicaciones y la escritura de pruebas unitarias.
 
 Proyecto de aprendizaje de Códica: https://app.codica.la/programs/frontend
@@ -26,6 +29,8 @@ cd frontend-project-103
 
 [![asciicast](https://asciinema.org/a/7Z6yLbMDCSh7itQr.svg)](https://asciinema.org/a/7Z6yLbMDCSh7itQr)
 ---
+ 
+
 
 <details>
 <summary>Pruebas automáticas de Códica</summary>
@@ -37,3 +42,4 @@ Las pruebas se ejecutan en cada commit. El archivo `.github/workflows/hexlet-che
 ## Acerca de Códica
 
 [Códica](https://app.codica.la/) es una escuela de programación: programas de aprendizaje propios con práctica, apoyo de mentores y proyectos reales que quedan en su currículum. Este repositorio es uno de esos proyectos.
+
