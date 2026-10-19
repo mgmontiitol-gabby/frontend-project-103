@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs'; 
 import path from 'path';
+import { load } from 'js-yaml';
 
 
 const parse = (filepath) => {
@@ -8,6 +9,8 @@ const parse = (filepath) => {
 
     if (extension === '.json') {
         return JSON.parse(content);
+    } else if (extension === '.yml' || extension === '.yaml'){
+        return load(content)
     }
 
     throw new Error (`Formato NO Soportado: ${extension}`);
