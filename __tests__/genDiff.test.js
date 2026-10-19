@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest';
 import genDiff from '../src/genDiff';
-import parse from '../src/parser';
+import parse from '../src/parsers';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
