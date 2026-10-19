@@ -24,3 +24,22 @@ expect(result).toBe(
 }`
 );
 });
+
+const filepath1YML = join(__dirname, '..', '__tests__', 'fixtures', 'file1.yml');
+const filepath2YML = join(__dirname, '..', '__tests__', 'fixtures', 'file2.yml');
+
+test ('comparar dos archivos YML', () => {
+    const data1 = parse(filepath1YML);
+    const data2 = parse(filepath2YML);
+    const result = genDiff(data1, data2);
+expect (result).toBe(
+`{
+  - follow: false
+    host: codica.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}`
+);
+});
