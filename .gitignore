@@ -1,4 +1,4 @@
-gendiff-demo.cast
-yaml.demo.cast
+node_modules
+.DS_Store
 coverage
-nested-demo.cast
+*.cast
