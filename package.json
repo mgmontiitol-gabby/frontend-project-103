@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "[![hexlet-check](https://github.com/mgmontiitol-gabby/frontend-project-103/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mgmontiitol-gabby/frontend-project-103/actions)",
   "main": "src/parser.js",
+  "bin": {
+    "gendiff": "gendiff.js"
+  },
   "type": "module",
   "scripts": {
     "test": "vitest run",
