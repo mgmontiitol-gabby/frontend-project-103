@@ -16,7 +16,6 @@ const objToString = (value, depth) => {
 
 const stylish = (tree, depth = 1) => {
     const indent = ' '.repeat(depth * 4 - 2);
-    const endIndent = ' '.repeat(depth * 4 - 4);
 
     const lines = tree.map((node) => {
         if (node.type === 'unchanged') {
@@ -32,6 +31,7 @@ const stylish = (tree, depth = 1) => {
             return `${indent}- ${node.key}: ${objToString(node.oldValue, depth)}\n${indent}+ ${node.key}: ${objToString(node.newValue, depth)}`;
         }
         if (node.type === 'nested'){
+            const endIndent = ' '.repeat(depth * 4);
             return `${indent}  ${node.key}: {\n${stylish(node.children, depth + 1)}\n${endIndent}}`
         }
         return null;
