@@ -7,7 +7,7 @@ const buildDiff = (data1, data2) => {
     const dataLines = allData.map((key) => {
         
         if (Object.hasOwn(data1, key) && Object.hasOwn(data2, key) &&
-            _.isObject(data1[key]) && _.isObject(data2[key])) {
+            _.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {
                 return {key, type: 'nested', children: buildDiff(data1[key], data2[key]) };
         }
         else if (Object.hasOwn(data1, key) && Object.hasOwn(data2, key) &&
