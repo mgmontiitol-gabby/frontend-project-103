@@ -1,12 +1,15 @@
 import _ from 'lodash';
 
+const indentationSpaces  = 4;
+const leftShifts = 2;
+
 const objToString = (value, depth) => {
     if (!_.isObject(value)) {
         return `${value}`;
     }
 
-    const indent = ' '.repeat(depth * 4 + 4);
-    const endIndent = ' '.repeat(depth * 4);
+    const indent = ' '.repeat((depth + 1) * indentationSpaces);
+    const endIndent = ' '.repeat(depth * indentationSpaces);
 
     const lines = Object.keys(value).map((key) => {
         return `${indent}${key}: ${objToString(value[key], depth + 1)}`;
@@ -15,7 +18,7 @@ const objToString = (value, depth) => {
 };
 
 const stylish = (tree, depth = 1) => {
-    const indent = ' '.repeat(depth * 4 - 2);
+    const indent = ' '.repeat(depth * indentationSpaces - leftShifts);
 
     const lines = tree.map((node) => {
         if (node.type === 'unchanged') {
@@ -31,7 +34,7 @@ const stylish = (tree, depth = 1) => {
             return `${indent}- ${node.key}: ${objToString(node.oldValue, depth)}\n${indent}+ ${node.key}: ${objToString(node.newValue, depth)}`;
         }
         if (node.type === 'nested'){
-            const endIndent = ' '.repeat(depth * 4);
+            const endIndent = ' '.repeat(depth * indentationSpaces);
             return `${indent}  ${node.key}: {\n${stylish(node.children, depth + 1)}\n${endIndent}}`
         }
         return null;
