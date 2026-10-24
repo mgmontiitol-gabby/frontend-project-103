@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import { program } from 'commander'; 
-import parse from './src/parsers.js';
-import path from 'path';
 import genDiff from './src/genDiff.js';
 
 program
@@ -13,10 +11,6 @@ program
   .helpOption('-h, --help', 'output usage information')
   .option('-f, --format <type>', 'output format', 'stylish')
   .action((filepath1, filepath2, options) => {
-    const absolutePath1 = path.resolve(process.cwd(), filepath1);
-    const absolutePath2 = path.resolve(process.cwd(), filepath2);
-    const data1 = parse(absolutePath1);
-    const data2 = parse(absolutePath2);
-    console.log(genDiff(data1, data2, options.format));
+    console.log(genDiff(filepath1,filepath2, options.format));
   })
   .parse(process.argv);
