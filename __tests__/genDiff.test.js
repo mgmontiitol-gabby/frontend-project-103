@@ -1,10 +1,7 @@
 import { test, expect } from 'vitest';
 import genDiff from '../src/genDiff';
-import parse from '../src/parsers';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import plain from '../src/formatters/plain.js';
-import buildDiff from '../src/buildDiff.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -12,9 +9,7 @@ const filepath1 = join(__dirname, '..', '__tests__', 'fixtures', 'file1.json');
 const filepath2 = join(__dirname, '..', '__tests__', 'fixtures', 'file2.json');
 
 test ('comparar dos archivos JSON flat', () => {
-    const data1 = parse(filepath1);
-    const data2 = parse(filepath2);
-    const result = genDiff(data1, data2);
+    const result = genDiff(filepath1, filepath2);
 expect(result).toBe(
 `{
   - follow: false
@@ -31,9 +26,7 @@ const filepath1YML = join(__dirname, '..', '__tests__', 'fixtures', 'file1.yml')
 const filepath2YML = join(__dirname, '..', '__tests__', 'fixtures', 'file2.yml');
 
 test ('comparar dos archivos YML', () => {
-    const data1 = parse(filepath1YML);
-    const data2 = parse(filepath2YML);
-    const result = genDiff(data1, data2);
+    const result = genDiff(filepath1YML, filepath2YML);
 expect (result).toBe(
 `{
   - follow: false
@@ -52,9 +45,7 @@ const filepath1nestedYML = join(__dirname, '..', '__tests__', 'fixtures', 'file1
 const filepath2nestedYML = join(__dirname, '..', '__tests__', 'fixtures', 'file2-group.yml');
 
 test ('compara archivos anidados JSON', () => {
-    const data1 = parse(filepath1nested);
-    const data2 = parse(filepath2nested);
-    const result = genDiff(data1, data2);
+    const result = genDiff(filepath1nested, filepath2nested);
 expect (result).toBe (
 `{
     common: {
@@ -103,10 +94,8 @@ expect (result).toBe (
 );
 });
 
-test ('compara archivos anidaos YML', () => {
-    const data1 = parse(filepath1nestedYML);
-    const data2 = parse(filepath2nestedYML);
-    const result = genDiff(data1, data2);
+test ('compara archivos anidados YML', () => {
+    const result = genDiff(filepath1nestedYML, filepath2nestedYML);
 expect(result).toBe(
 `{
     common: {
@@ -156,9 +145,7 @@ expect(result).toBe(
 });
 
 test ('formato plano con archivos anidados', ()=> {
-    const data1 = parse(filepath1nested);
-    const data2 = parse(filepath2nested);
-    const result = plain(buildDiff(data1, data2));
+    const result = genDiff(filepath1nested, filepath2nested, 'plain');
 expect(result).toBe(
 `Property 'common.follow' was added with value: false
 Property 'common.setting2' was removed
