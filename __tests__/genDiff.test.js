@@ -160,3 +160,10 @@ Property 'group2' was removed
 Property 'group3' was added with value: [complex value]`    
   );
 });
+
+test ('formato json con archivos anidados', () => {
+    const result = genDiff(filepath1nested, filepath2nested, 'json');
+    const parsed = JSON.parse(result);
+    expect (Array.isArray(parsed)).toBe(true);
+    expect(parsed[0].key).toBe('common');
+});
