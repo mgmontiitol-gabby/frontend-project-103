@@ -34,6 +34,8 @@ cd frontend-project-103
 [![asciicast](https://asciinema.org/a/lkEK3sDh39VODZhH.svg)](https://asciinema.org/a/lkEK3sDh39VODZhH)
 
 [![asciicast](https://asciinema.org/a/LWuSArXr04HeKJX6.svg)](https://asciinema.org/a/LWuSArXr04HeKJX6)
+
+[![asciicast](https://asciinema.org/a/Rl99cGv3VBlYScSb.svg)](https://asciinema.org/a/Rl99cGv3VBlYScSb)
 ---
  
 
