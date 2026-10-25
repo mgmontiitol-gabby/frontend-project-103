@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![hexlet-check](https://github.com/mgmontiitol-gabby/frontend-project-103/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mgmontiitol-gabby/frontend-project-103/actions)",
-  "main": "src/parser.js",
+  "main": "src/genDiff.js",
   "bin": {
     "gendiff": "gendiff.js"
   },
